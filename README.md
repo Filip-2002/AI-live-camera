@@ -79,37 +79,37 @@ If you have any problems scroll down to `⚠️ Notes`
 
 ## ⚠️ Notes
 
-   - macOS users: Allow your Terminal app access to the Camera in System Settings → Privacy & Security → Camera.
+- macOS users: Allow your Terminal app access to the Camera in System Settings → Privacy & Security → Camera.
 
-   - If you see ModuleNotFoundError (e.g., cv2), make sure your virtual environment is activated (look for (.venv) in your terminal prompt).
+- If you see ModuleNotFoundError (e.g., cv2), make sure your virtual environment is activated (look for (.venv) in your terminal prompt).
 
-   - Windows users: If `python` doesn’t work, try using `python3` instead.  
+- Windows users: If `python` doesn’t work, try using `python3` instead.  
 
-   - If you get `pip` version errors, upgrade pip inside the virtual environment:  
+- If you get `pip` version errors, upgrade pip inside the virtual environment:  
 
-   Windows
+  Windows
 
-   ```bash
-   python -m pip install --upgrade pip
-   ```
+  ```bash
+  python -m pip install --upgrade pip
+  ```
 
-   Mac/Linux  
+  Mac/Linux  
 
-   ```bash
-   python3 -m pip install --upgrade pip
-   ```
+  ```bash
+  python3 -m pip install --upgrade pip
+  ```
 
-   - When switching between projects, deactivate your virtual environment with:
-   ```bash
-   deactivate
+- When switching between projects, deactivate your virtual environment with:
+  ```bash
+  deactivate
 
-   - If you see OpenCV camera errors on macOS, make sure no other application (e.g. Zoom, Teams, or browser) is already using the webcam.
+- If you see OpenCV camera errors on macOS, make sure no other application (e.g. Zoom, Teams, or browser) is already using the webcam.
 
-   - You can adjust the input image size in `run_webcam_wbf.py` on line 55 (`"--imgsz"`) depending on your machine’s performance:  
-   - If your machine is struggling, set the default to **320**.  
-   - If your machine is powerful, set the default to **1280**.  
-   - The default value (**640**) is a balanced option. 
+- You can adjust the input image size in `run_webcam_wbf.py` on line 55 (`"--imgsz"`) depending on your machine’s performance:  
+  - If your machine is struggling, set the default to **320**.  
+  - If your machine is powerful, set the default to **1280**.  
+  - The default value (**640**) is a balanced option. 
 
-   - You can change the model size in `run_webcam_wbf.py` on lines 52 (`"--coco"`) and 53 (`"--oiv7"`) depending on your machine’s performance:  
-   - If your machine is struggling, use `"yolov8s.pt"` and `"yolov8s-oiv7.pt"`, or `"yolov8m.pt"` and  `"yolov8m-oiv7.pt"`.  
-   - Make sure to download the corresponding model weights in **Step 4**. 
+- You can change the model size in `run_webcam_wbf.py` on lines 52 (`"--coco"`) and 53 (`"--oiv7"`) depending on your machine’s performance:  
+  - If your machine is struggling, use `"yolov8s.pt"` and `"yolov8s-oiv7.pt"`, or `"yolov8m.pt"` and `"yolov8m-oiv7.pt"`.  
+  - Make sure to download the corresponding model weights in **Step 4**. 
