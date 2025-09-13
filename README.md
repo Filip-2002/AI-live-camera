@@ -10,7 +10,9 @@ This project demonstrates expertise in artificial intelligence, machine learning
 - Runs in real time on webcam or video input  
 - Configurable model sizes (s/m/l) and image resolutions to balance speed vs accuracy  
 
-## 🚀 Setup (if you have any problems scroll down to ⚠️ Notes)
+## 🚀 Setup
+
+if you have any problems scroll down to ⚠️ Notes
 
 1. Clone the repository:
    ```bash
@@ -81,11 +83,11 @@ More model sizes can be found on the [Ultralytics YOLOv8 releases page](https://
 
 - If you see OpenCV camera errors on macOS, make sure no other application (e.g. Zoom, Teams, or browser) is already using the webcam.
 
-- You can adjust the input image size in `run_webcam_wbf.py` on line 55 ("--imgsz") depending on your machine’s performance:  
+- You can adjust the input image size in `run_webcam_wbf.py` on line 55 (`"--imgsz"`) depending on your machine’s performance:  
   - If your machine is struggling, set the default to **320**.  
   - If your machine is powerful, set the default to **1280**.  
   - The default value (**640**) is a balanced option. 
 
-- You can change the model size in `run_webcam_wbf.py` on lines 52 ("--coco") and 53 ("--oiv7") depending on your machine’s performance:  
+- You can change the model size in `run_webcam_wbf.py` on lines 52 (`"--coco"`) and 53 (`"--oiv7"`) depending on your machine’s performance:  
   - If your machine is struggling, use `"yolov8s.pt"` and `"yolov8s-oiv7.pt"`, or `"yolov8m.pt"` and `"yolov8m-oiv7.pt"`.  
   - Make sure to download the corresponding model weights in **Step 4**. 
