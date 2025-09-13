@@ -69,13 +69,23 @@ More model sizes can be found on the [Ultralytics YOLOv8 releases page](https://
 
 - Windows users: If `python` doesn’t work, try using `python3` instead.  
 
-- If you get `pip` version errors, upgrade pip inside the virtual environment (Windows):  
+- If you get `pip` version errors, upgrade pip inside the virtual environment:  
+
+  Windows
+  
   ```bash
   python -m pip install --upgrade pip
+  ```
 
-- If you get `pip` version errors, upgrade pip inside the virtual environment (Mac/Linux):  
+  Mac/Linux  
+
   ```bash
   python3 -m pip install --upgrade pip
+  ```
+
+
+
+
 
 - When switching between projects, deactivate your virtual environment with:
   ```bash
