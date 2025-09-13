@@ -42,17 +42,17 @@ This project demonstrates expertise in artificial intelligence, machine learning
 4. Download YOLOv8 pretrained weights and place them in the project folder:
 
 Default (what this project uses):  
-- [YOLOv8l COCO weights (yolov8l.pt)](https://github.com/ultralytics/assets/releases/download/v0.0.0/yolov8l.pt)  
-- [YOLOv8l OpenImages V7 weights (yolov8l-oiv7.pt)](https://github.com/ultralytics/assets/releases/download/v0.0.0/yolov8l-oiv7.pt)
+- [YOLOv8l COCO weights (yolov8l.pt)](https://github.com/ultralytics/assets/releases/download/v0.0.0/yolov8l.pt) (Large)
+- [YOLOv8l OpenImages V7 weights (yolov8l-oiv7.pt)](https://github.com/ultralytics/assets/releases/download/v0.0.0/yolov8l-oiv7.pt) (Large)
 
 
 
 
 Optional (other sizes available for different speed/accuracy trade-offs):  
-- [YOLOv8m COCO weights](https://github.com/ultralytics/assets/releases/download/v0.0.0/yolov8m.pt)  
-- [YOLOv8m OpenImages V7 weights](https://github.com/ultralytics/assets/releases/download/v0.0.0/yolov8m-oiv7.pt)  
-- [YOLOv8s COCO weights](https://github.com/ultralytics/assets/releases/download/v0.0.0/yolov8s.pt)  
-- [YOLOv8s OpenImages V7 weights](https://github.com/ultralytics/assets/releases/download/v0.0.0/yolov8s-oiv7.pt)  
+- [YOLOv8m COCO weights](https://github.com/ultralytics/assets/releases/download/v0.0.0/yolov8m.pt) (Medium) 
+- [YOLOv8m OpenImages V7 weights](https://github.com/ultralytics/assets/releases/download/v0.0.0/yolov8m-oiv7.pt) (Medium) 
+- [YOLOv8s COCO weights](https://github.com/ultralytics/assets/releases/download/v0.0.0/yolov8s.pt) (Small)  
+- [YOLOv8s OpenImages V7 weights](https://github.com/ultralytics/assets/releases/download/v0.0.0/yolov8s-oiv7.pt) (Small)   
 
 More model sizes can be found on the [Ultralytics YOLOv8 releases page](https://github.com/ultralytics/assets/releases).
 
