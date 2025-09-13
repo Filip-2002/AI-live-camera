@@ -14,7 +14,7 @@ This project demonstrates expertise in artificial intelligence, machine learning
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/Filip-2002/ai-camera.git
+   git clone https://github.com/Filip-2002/AI-live-camera.git
    cd ai-camera
 
 
