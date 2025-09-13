@@ -59,7 +59,7 @@ If you have any problems scroll down to `⚠️ Notes`
    - **`s` (small models):** Fastest, runs well on lower end machines, but less accurate.  
    - **`m` (medium models):** Good balance between speed and accuracy.  
    - **`l` (large models):** Most accurate, but slower, best on more powerful hardware. 
-   - More information about how to change models in **⚠️ Notes**
+   - More information about how to change models in `⚠️ Notes`
 
    More model sizes can be found on the [Ultralytics YOLOv8 releases page](https://github.com/ultralytics/assets/releases).
 

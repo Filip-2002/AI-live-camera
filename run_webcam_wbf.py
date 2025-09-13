@@ -47,7 +47,7 @@ def draw_fused(frame, fused_boxes_n, fused_scores, fused_label_ids, id2name):
         (tw, th), _ = cv2.getTextSize(label, cv2.FONT_HERSHEY_SIMPLEX, 0.55, 2)
         cv2.rectangle(frame, (p1[0], p1[1] - th - 6), (p1[0] + tw + 4, p1[1]), color, -1)
         cv2.putText(frame, label, (p1[0] + 2, p1[1] - 4), cv2.FONT_HERSHEY_SIMPLEX, 0.55, (0, 0, 0), 2, cv2.LINE_AA)
-    return frame
+    return frame 
 
 def main():
     ap = argparse.ArgumentParser(description="YOLOv8 dual-model webcam with Weighted Box Fusion")
