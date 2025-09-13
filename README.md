@@ -10,7 +10,7 @@ This project demonstrates expertise in artificial intelligence, machine learning
 - Runs in real time on webcam or video input  
 - Configurable model sizes (s/m/l) and image resolutions to balance speed vs accuracy  
 
-## 🚀 Setup
+## 🚀 Setup (if you have any problems scroll down to ⚠️ Notes)
 
 1. Clone the repository:
    ```bash
