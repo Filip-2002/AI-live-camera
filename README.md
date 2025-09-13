@@ -19,14 +19,14 @@ This project demonstrates expertise in artificial intelligence, machine learning
 
 
 2. Create and activate a virtual environment:
-   ```markdown
+
    Windows
 
    ```bash
    python -m venv .venv
    .\.venv\Scripts\activate
    ```
-   ```markdown
+
    Max/Linux
 
    ```bash
