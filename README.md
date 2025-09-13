@@ -15,7 +15,7 @@ This project demonstrates expertise in artificial intelligence, machine learning
 1. Clone the repository:
    ```bash
    git clone https://github.com/Filip-2002/AI-live-camera.git
-   cd ai-camera
+   cd AI-live-camera
 
 
 2. Create and activate a virtual environment:
