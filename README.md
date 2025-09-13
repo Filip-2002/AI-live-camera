@@ -48,7 +48,6 @@ Default (what this project uses):
 Optional (other sizes available for different speed/accuracy trade-offs):  
 - [YOLOv8m COCO weights](https://github.com/ultralytics/assets/releases/download/v0.0.0/yolov8m.pt) (Medium)
 - [YOLOv8m OpenImages V7 weights](https://github.com/ultralytics/assets/releases/download/v0.0.0/yolov8m-oiv7.pt) (Medium)
-  
 - [YOLOv8s COCO weights](https://github.com/ultralytics/assets/releases/download/v0.0.0/yolov8s.pt) (Small)
 - [YOLOv8s OpenImages V7 weights](https://github.com/ultralytics/assets/releases/download/v0.0.0/yolov8s-oiv7.pt) (Small)   
 
