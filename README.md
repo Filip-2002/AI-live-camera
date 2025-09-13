@@ -1,14 +1,15 @@
 # Multi Model Real Time Object Detection AI Camera by Filip Ilovsky
 
-This project is an advanced AI camera system that integrates two YOLOv8 models trained on COCO (80 classes) and OpenImages V7 (600+ classes) to achieve broad spectrum object recognition. Predictions are combined using Weighted Box Fusion (WBF) to intelligently merge overlapping detections, resulting in duplicate free, higher-confidence results beyond the capability of a single model. The pipeline is optimized with OpenCV for real-time video processing, enabling accurate detection across more than 600 object categories.
+This project is an advanced AI camera system that integrates two YOLOv8 models trained on COCO (80 classes) and OpenImages V7 (600+ classes) to achieve broad spectrum object recognition. Predictions are combined using Weighted Box Fusion (WBF) to intelligently merge overlapping detections, resulting in duplicate free, higher confidence results beyond the capability of a single model. The pipeline is optimized with OpenCV for real time processing of both webcam feeds and video files, enabling accurate detection across more than 600 object categories.
 
 This project demonstrates expertise in artificial intelligence, machine learning, deep learning model integration, ensemble methods, and real time computer vision systems.
 
 ## ✨ Features
 - Combines COCO + OpenImages V7 models for broad object coverage  
-- Uses Weighted Box Fusion (WBF) for duplicate free, high-confidence detections  
-- Runs in real time on webcam or video input  
-- Configurable model sizes (s/m/l) and image resolutions to balance speed vs accuracy  
+- Uses Weighted Box Fusion (WBF) for duplicate free, high confidence detections  
+- Supports both **real-time webcam feeds** and **video file input/output**  
+- Ability to save processed videos with detections into `videos/outputs/`  
+- Configurable model sizes (`s/m/l`) and image resolutions to balance speed vs accuracy   
 
 ## 🚀 Setup
 
@@ -54,12 +55,20 @@ If you have any problems scroll down to `⚠️ Notes`
    - [YOLOv8s COCO weights](https://github.com/ultralytics/assets/releases/download/v0.0.0/yolov8s.pt) (Small)
    - [YOLOv8s OpenImages V7 weights](https://github.com/ultralytics/assets/releases/download/v0.0.0/yolov8s-oiv7.pt) (Small)   
 
+   **Performance vs Accuracy:**  
+   - **`s` (small models):** Fastest, runs well on lower end machines, but less accurate.  
+   - **`m` (medium models):** Good balance between speed and accuracy.  
+   - **`l` (large models):** Most accurate, but slower, best on more powerful hardware. 
+   - More information about how to change models in **⚠️ Notes**
+
    More model sizes can be found on the [Ultralytics YOLOv8 releases page](https://github.com/ultralytics/assets/releases).
 
+   
 
-5. Run
 
-   webcam:
+5. Run:
+
+   Webcam
 
    Default (CPU, works on all machines):
 
@@ -78,6 +87,28 @@ If you have any problems scroll down to `⚠️ Notes`
    ```bash
    python run_webcam_wbf.py --device cpu
    ```
+
+   Save your webcam output by adding ` --save` before running, for example:
+
+   ```bash
+   python run_webcam_wbf.py --device cpu --save
+   ```
+
+
+   Video Files
+   
+   Run a video from `/videos` folder:
+
+   ```bash
+   python run_webcam_wbf.py --source example.mp4
+   ```
+
+   Run and save the output video (saved to `videos/outputs/`): 
+
+   ```bash
+   python run_webcam_wbf.py --source example.mp4 --save
+   ```
+
 
 ## ⚠️ Notes
 
@@ -102,6 +133,7 @@ If you have any problems scroll down to `⚠️ Notes`
   ```
 
 - When switching between projects, deactivate your virtual environment with:
+
   ```bash
   deactivate
 
@@ -115,3 +147,7 @@ If you have any problems scroll down to `⚠️ Notes`
 - You can change the model size in `run_webcam_wbf.py` on lines 52 (`"--coco"`) and 53 (`"--oiv7"`) depending on your machine’s performance:  
   - If your machine is struggling, use `"yolov8s.pt"` and `"yolov8s-oiv7.pt"`, or `"yolov8m.pt"` and `"yolov8m-oiv7.pt"`.  
   - Make sure to download the corresponding model weights in **Step 4**. 
+
+- By default, the script automatically selects GPU if available, otherwise falls back to CPU. You can force this behavior with ` --device cuda` (GPU) or ` --device cpu`.
+
+- Use the ` --save` flag to save processed output (works for both webcam and video files). Saved videos go into `videos/outputs/`.
