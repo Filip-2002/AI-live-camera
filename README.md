@@ -57,7 +57,9 @@ If you have any problems scroll down to `⚠️ Notes`
    More model sizes can be found on the [Ultralytics YOLOv8 releases page](https://github.com/ultralytics/assets/releases).
 
 
-5. Run the webcam:
+5. Run
+
+   webcam:
 
    Default (CPU, works on all machines):
 

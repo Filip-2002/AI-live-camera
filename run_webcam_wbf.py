@@ -7,6 +7,8 @@ import numpy as np
 from ultralytics import YOLO
 from ensemble_boxes import weighted_boxes_fusion
 
+import os
+
 def color_for(text):
     import hashlib, random
     h = int(hashlib.sha1(text.encode("utf-8")).hexdigest(), 16) & 0xFFFFFFFF
@@ -49,26 +51,41 @@ def draw_fused(frame, fused_boxes_n, fused_scores, fused_label_ids, id2name):
 
 def main():
     ap = argparse.ArgumentParser(description="YOLOv8 dual-model webcam with Weighted Box Fusion")
-    ap.add_argument("--coco", default="yolov8l.pt", help="Path to COCO model weights") #change this to s,m,l based on pc power
-    ap.add_argument("--oiv7", default="yolov8l-oiv7.pt", help="Path to OIV7 model weights")#change this to s,m,l based on pc power
-    ap.add_argument("--source", default="0", help="Webcam index or video path (default: 0)")
-    ap.add_argument("--imgsz", type=int, default=640, help="Inference image size") #change up or down depending on pc power
+    ap.add_argument("--coco", default="yolov8l.pt", help="Path to COCO model weights")
+    ap.add_argument("--oiv7", default="yolov8l-oiv7.pt", help="Path to OIV7 model weights")
+    ap.add_argument("--source", default="0", help="Webcam index or video filename (looked up in 'videos/' folder)")
+    ap.add_argument("--imgsz", type=int, default=640, help="Inference image size")
     ap.add_argument("--conf", type=float, default=0.25, help="Per-model confidence threshold")
-    ap.add_argument("--iou", type=float, default=0.7, help="Per-model NMS IoU (higher keeps more boxes for WBF)")
-    ap.add_argument("--wbf_iou", type=float, default=0.55, help="WBF IoU threshold (overlap needed to fuse)")
-    ap.add_argument("--skip_box_thr", type=float, default=0.001, help="WBF skip threshold (keep low; conf handled by --conf)")
-    ap.add_argument("--device", default=None, help="torch device, e.g. 'cpu' or 'cuda:0' (auto if None)")
+    ap.add_argument("--iou", type=float, default=0.7, help="Per-model NMS IoU")
+    ap.add_argument("--wbf_iou", type=float, default=0.55, help="WBF IoU threshold")
+    ap.add_argument("--skip_box_thr", type=float, default=0.001, help="WBF skip threshold")
+    ap.add_argument("--device", default=None, help="torch device, e.g. 'cpu' or 'cuda:0'")
+    ap.add_argument("--save", action="store_true", help="Save output video to videos/outputs/ folder")
     args = ap.parse_args()
 
     print("Loading models...")
     model_coco = YOLO(args.coco)
     model_oiv7 = YOLO(args.oiv7)
 
-    src = int(args.source) if args.source.isdigit() else args.source
-    cap = cv2.VideoCapture(src)
+    if args.source.isdigit():
+        src = int(args.source)
+    else:
+        src = os.path.join("videos", args.source)
 
+    cap = cv2.VideoCapture(src)
     if not cap.isOpened():
-        raise RuntimeError(f"Could not open video source: {args.source}")
+        raise RuntimeError(f"Could not open video source: {src}")
+
+    out_writer = None
+    if args.save:
+        os.makedirs("videos/outputs", exist_ok=True)
+        fourcc = cv2.VideoWriter_fourcc(*"mp4v")
+        fps = cap.get(cv2.CAP_PROP_FPS) or 30
+        width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
+        height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
+        out_path = os.path.join("videos/outputs", "output.mp4")
+        out_writer = cv2.VideoWriter(out_path, fourcc, fps, (width, height))
+        print(f"Saving output video to {out_path}")
 
     name2id = {}
     id2name = {}
@@ -111,7 +128,7 @@ def main():
                 labels_list,
                 iou_thr=args.wbf_iou,
                 skip_box_thr=args.skip_box_thr,
-                conf_type="avg" 
+                conf_type="avg"
             )
 
         out = frame.copy()
@@ -125,11 +142,18 @@ def main():
         cv2.putText(out, f"FPS: {fps_avg:.1f}", (8, 24), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (25, 255, 25), 2, cv2.LINE_AA)
 
         cv2.imshow("YOLOv8 COCO + OIV7 (WBF fused)", out)
+
+        if out_writer:
+            out_writer.write(out)
+
         if cv2.waitKey(1) & 0xFF == ord("q"):
             break
 
     cap.release()
+    if out_writer:
+        out_writer.release()
     cv2.destroyAllWindows()
+
 
 if __name__ == "__main__":
     main()
