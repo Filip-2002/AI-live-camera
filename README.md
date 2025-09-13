@@ -50,6 +50,7 @@ More model sizes (`n`, `s`, `m`, `l`, `x`) can be found on the [Ultralytics YOLO
 5. Run the webcam:
   ```bash
   python run_webcam_wbf.py
+  ```
 
 ## ⚠️ Notes
 
