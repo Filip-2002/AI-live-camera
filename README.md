@@ -36,6 +36,7 @@ If you have any problems scroll down to `⚠️ Notes`
    source .venv/bin/activate
    ```
 
+
 3. Install dependencies:
    ```bash
    pip install -r requirements.txt
@@ -57,8 +58,23 @@ More model sizes can be found on the [Ultralytics YOLOv8 releases page](https://
 
 
 5. Run the webcam:
+
+  Default (CPU, works on all machines):
+
   ```bash
   python run_webcam_wbf.py
+  ```
+
+  Use GPU for faster performance (requires an NVIDIA GPU with CUDA):
+  
+  ```bash
+  python run_webcam_wbf.py --device cuda
+  ```
+
+  Force CPU explicitly (useful if CUDA is installed but you prefer CPU):
+
+  ```bash
+  python run_webcam_wbf.py --device cpu
   ```
 
 ## ⚠️ Notes
@@ -72,7 +88,7 @@ More model sizes can be found on the [Ultralytics YOLOv8 releases page](https://
 - If you get `pip` version errors, upgrade pip inside the virtual environment:  
 
   Windows
-  
+
   ```bash
   python -m pip install --upgrade pip
   ```
@@ -82,10 +98,6 @@ More model sizes can be found on the [Ultralytics YOLOv8 releases page](https://
   ```bash
   python3 -m pip install --upgrade pip
   ```
-
-
-
-
 
 - When switching between projects, deactivate your virtual environment with:
   ```bash
