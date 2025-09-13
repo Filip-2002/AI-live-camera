@@ -12,7 +12,7 @@ This project demonstrates expertise in artificial intelligence, machine learning
 
 ## 🚀 Setup
 
-if you have any problems scroll down to ⚠️ Notes
+If you have any problems scroll down to - `⚠️ Notes`
 
 1. Clone the repository:
    ```bash
