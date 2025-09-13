@@ -1,12 +1,12 @@
-# Multi-Model Real-Time Object Detection AI Camera by Filip Ilovsky
+# Multi Model Real Time Object Detection AI Camera by Filip Ilovsky
 
-This project is an advanced AI camera system that integrates two YOLOv8 models trained on COCO (80 classes) and OpenImages V7 (600+ classes) to achieve broad-spectrum object recognition. Predictions are combined using Weighted Box Fusion (WBF) to intelligently merge overlapping detections, resulting in duplicate-free, higher-confidence results beyond the capability of a single model. The pipeline is optimized with OpenCV for real-time video processing, enabling accurate detection across more than 600 object categories.
+This project is an advanced AI camera system that integrates two YOLOv8 models trained on COCO (80 classes) and OpenImages V7 (600+ classes) to achieve broad spectrum object recognition. Predictions are combined using Weighted Box Fusion (WBF) to intelligently merge overlapping detections, resulting in duplicate free, higher-confidence results beyond the capability of a single model. The pipeline is optimized with OpenCV for real-time video processing, enabling accurate detection across more than 600 object categories.
 
-This project demonstrates expertise in artificial intelligence, machine learning, deep learning model integration, ensemble methods, and real-time computer vision systems.
+This project demonstrates expertise in artificial intelligence, machine learning, deep learning model integration, ensemble methods, and real time computer vision systems.
 
 ## ✨ Features
 - Combines COCO + OpenImages V7 models for broad object coverage  
-- Uses Weighted Box Fusion (WBF) for duplicate-free, high-confidence detections  
+- Uses Weighted Box Fusion (WBF) for duplicate free, high-confidence detections  
 - Runs in real time on webcam or video input  
 - Configurable model sizes (s/m/l) and image resolutions to balance speed vs accuracy  
 
@@ -18,16 +18,21 @@ This project demonstrates expertise in artificial intelligence, machine learning
    cd AI-live-camera
 
 
-2. Create and activate a virtual environment (Windows):
+2. Create and activate a virtual environment:
+   ```markdown
+   Windows
+
    ```bash
    python -m venv .venv
    .\.venv\Scripts\activate
+   ```
+   ```markdown
+   Max/Linux
 
-2. Create and activate a virtual environment (Max/Linux):
    ```bash
    python3 -m venv .venv
    source .venv/bin/activate
-
+   ```
 
 3. Install dependencies:
    ```bash
