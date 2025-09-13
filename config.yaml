@@ -1,0 +1,17 @@
+model_path: yolov8l.pt 
+img_size: 640           
+conf_threshold: 0.5    
+iou_threshold: 0.5      
+max_det: 300           
+classes: null          
+
+tracker:
+  max_age: 30         
+  iou_match_threshold: 0.3
+
+alerting:
+  enabled: false     
+  target_classes: [0]   
+  cooldown_seconds: 30
+  webhooks: []
+

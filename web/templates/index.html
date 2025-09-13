@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI Camera – Alerts</title>
+    <style>
+      body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial; margin: 2rem; }
+      .card { border: 1px solid #ddd; border-radius: 12px; padding: 1rem; margin-bottom: 1rem; }
+      .ts { color: #666; font-size: 12px; }
+      .pill { display:inline-block; padding:2px 8px; border-radius:999px; border:1px solid #ccc; margin-right:6px; }
+    </style>
+  </head>
+  <body>
+    <h1>AI Camera – Recent Alerts</h1>
+    {% for e in events %}
+      <div class="card">
+        <div class="ts">{{ e.ts }}</div>
+        {% for ev in e.events %}
+          <div><span class="pill">#{{ ev.track }}</span> <strong>{{ ev.label }}</strong> in zones: {{ ev.zones|join(', ') }}</div>
+        {% endfor %}
+      </div>
+    {% endfor %}
+    {% if not events %}
+      <p>No alerts yet.</p>
+    {% endif %}
+  </body>
+</html>
