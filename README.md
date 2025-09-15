@@ -11,6 +11,18 @@ This project demonstrates expertise in artificial intelligence, machine learning
 - Ability to save processed videos with detections into `videos/outputs/`  
 - Configurable model sizes (`s/m/l`) and image resolutions to balance speed vs accuracy   
 
+## 🎥 Demo
+
+Real time webcam detection:
+
+<video src="demo/Webcam_Example.mp4" controls width="720"></video>
+
+Real time mp4 detection:
+
+<video src="demo/Clip_Example.mp4" controls width="720"></video>
+
+
+
 ## 🚀 Setup
 
 If you have any problems scroll down to `⚠️ Notes`
