@@ -42,7 +42,7 @@ If you have any problems scroll down to `⚠️ Notes`
    .\.venv\Scripts\activate
    ```
 
-   Max/Linux
+   MacOS/Linux
 
    ```bash
    python3 -m venv .venv
@@ -138,7 +138,7 @@ If you have any problems scroll down to `⚠️ Notes`
   python -m pip install --upgrade pip
   ```
 
-  Mac/Linux  
+  MacOS/Linux  
 
   ```bash
   python3 -m pip install --upgrade pip
