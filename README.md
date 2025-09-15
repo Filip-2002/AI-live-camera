@@ -15,11 +15,11 @@ This project demonstrates expertise in artificial intelligence, machine learning
 
 Real time webcam detection:
 
-![Webcam Demo](demo/Webcam_Example.mp4)
+![Webcam Demo](demo/Webcam_Example.gif)
 
 Real time mp4 detection:
 
-![Video Demo](demo/Clip_Example.mp4)
+![Video Demo](demo/Clip_Example.gif)
 
 
 
